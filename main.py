@@ -1,68 +1,73 @@
-from flaskapp import *
-from flask import render_template
-# session here: Flask does this is by using a signed cookie.
-from flask import request, session, redirect, url_for
-from werkzeug.utils import secure_filename
-from database.models import User, db, Car
+from flask import render_template, request, session, redirect, url_for
+
+from database.models import User, Movie, db
 from database import crud
+from flaskapp import *
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+
+# ... (your existing imports)
+
+# assuming you have the login manager setup
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 @app.route("/")
-# @app.route("/<context>")
-def home(context=None):
+@app.route("/home")
+def home():
     data = {"Data": "Some data here to be sent as dict (JSON)"}
-    return render_template("index.html", context=None)
-
+    return render_template("HomePage.html", context=None)
 
 @app.route("/about")
-def about(context=None):
-    return render_template("about.html", context=context)
+def about():
+    return render_template("about.html")
+
+@app.route("/food")
+def food():
+    return render_template("food.html")
+
+@app.route("/movies")
+def movies(movie_id):
+
+    movies = Movie.query.all()
+
+    return render_template("movies.html", movies=movies)
 
 
 @app.route("/user/<int:user_id>")
-def user_page(user_id, context=None):
-    query = db.session.query(User).join(Car).filter(Car.car_owner == user_id).first()
-    if query:
-        return render_template("user page.html", context=query)
+@login_required
+def user_page(user_id, booking_id):
+    if not current_user.is_authenticated:
+        return redirect(url_for("login"))
+
+    # Check if the requested user_id matches the current user's id
+    if user_id != current_user.id:
+        return "You are not authorized to view this profile", 403
+    user = User.query.get(user_id)
+    # booking = Booking.query.get()
+
+    if user is None:
+        return "User not found", 404
+
+    # Checking if user is viewing his profile
+    if user_id == current_user.id:
+        return render_template("user.html", user=user, username=current_user.login)
     else:
-        query = db.session.query(User).filter(User.user_id == user_id).first()
-        return render_template("user page.html", context=query)
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login(context=None):
-    if request.method == "POST":
-        # you can check uncommenting this region if your data is coming or not
-        # print(f"Username: {request.form['username']}, Password: {request.form['password']}")
-        # making a query to a database
-        user = db.session.query(User).filter_by(login=request.form['username'],
-                                                password=request.form['password']).first()
-        print(user)
-        if user:
-            session['authenticated'] = True
-            session['uid'] = user.user_id
-            session['username'] = user.login
-            return redirect(url_for("user_page", user_id=user.user_id))
-        else:
-            return render_template("login.html", context="The login or username were wrong")
-
-    return render_template("login.html", context=context)
-
-
-@app.route("/logout")
-def logout():
-    session.pop('authenticated', None)
-    session.pop('uid', None)
-    session.pop('username', None)
-    return redirect(url_for('home'))
+        return "You are not authorized to view this profile", 403
 
 
 @app.route('/register', methods=["GET", "POST"])
-def register(context=None):
+def register():
     if request.method == "POST":
         login = request.form['username']
         fname = request.form['fname']
         sname = request.form['sname']
+        # email = request.form['email']
         pass1 = request.form['password']
         pass2 = request.form['password_conf']
 
@@ -71,25 +76,46 @@ def register(context=None):
         if data:
             return redirect(url_for("register", error="Already registered!"))
         elif pass1 != pass2:
-            return redirect(url_for("register", error="Passowords do not match!"))
+            return redirect(url_for("register", error="Passwords do not match!"))
         else:
             crud.add_user(User(login=login,
                                user_fname=fname,
                                user_sname=sname,
                                password=pass1))
 
-            return redirect(url_for("login", context="Succesfully registered!"))
-    return render_template("registration.html", context=context)
+            return redirect(url_for("login", context="Successfully registered!"))
+    return render_template("register.html")
 
 
-@app.route("/upload", methods=["GET", "POST"])
-def upload_file(context=None):
+@app.route("/login", methods=["GET", "POST"])
+def login():
     if request.method == "POST":
-        f = request.files["file_to_save"]
-        f.save(f"saved files/{secure_filename(f.filename)}")
-        return redirect(url_for('upload_file', context={"Status": "Successfully uploaded"}))
-    return render_template("file upload.html", context=context)
+        user = User.query.filter_by(login=request.form['username'],
+                                    password=request.form['password']).first()
+        if user:
+            login_user(user)
+            return redirect(url_for("user_page", user_id=user.user_id))
+        else:
+            return render_template("login.html", context="The login or username were wrong")
 
+    return render_template("login.html")
+
+
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for("home"))
+
+
+@app.route('/booking', methods=['GET', 'POST'])
+def process_seat_selection():
+    if request.method == "POST":
+        selected_seats = request.form.getlist('seat')
+        # Process the selected seats on the server side
+        print(f'Selected seats: {selected_seats}')
+        return "Seats selected successfully"
+    return render_template("seat.html")
 
 if __name__ == "__main__":
     with app.app_context():

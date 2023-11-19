@@ -1,0 +1,474 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+<!--    <title>Seat Selection</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <form method="POST" action="{{ url_for('ticket') }}">-->
+<!--        <div class="seat-container">-->
+<!--            {% for row in range(num_rows) %}-->
+<!--                <div class="seat-row">-->
+<!--                    {% for seat in range(num_seats) %}-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" name="seat" value="{{ row }}-{{ seat }}">-->
+<!--                            {{ row }}-{{ seat }}-->
+<!--                        </label>-->
+<!--                    {% endfor %}-->
+<!--                </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--        <button type="submit">Submit</button>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+<div style="width: 1920px; height: 4200px; position: relative; background: black">
+  <div style="width: 1440px; height: 3513.39px; left: 212px; top: 200px; position: absolute">
+    <div style="left: 88px; top: 0px; position: absolute"><span style="color: white; font-size: 36px; font-family: Helvetica; font-weight: 400; line-height: 45px; word-wrap: break-word">Movies at </span><span style="color: #0066FF; font-size: 36px; font-family: Helvetica; font-weight: 400; line-height: 45px; word-wrap: break-word">AITUPARK</span></div>
+    <div style="width: 57.84px; height: 16px; left: 90px; top: 175.78px; position: absolute; color: rgba(255, 255, 255, 0.50); font-size: 11.20px; font-family: Helvetica; font-weight: 400; line-height: 16px; word-wrap: break-word">FILTER BY</div>
+    <div style="width: 16px; height: 16px; left: 163.64px; top: 171.78px; position: absolute">
+      <div style="width: 16px; height: 15.74px; left: -0px; top: 0.18px; position: absolute; background: white"></div>
+    </div>
+    <div style="width: 150.12px; height: 21px; left: 192.11px; top: 170.78px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 22.86px; word-wrap: break-word">Premium Offerings</div>
+    <div style="width: 16px; height: 16px; left: 346.50px; top: 171.78px; position: absolute">
+      <div style="width: 16px; height: 8.75px; left: 0px; top: 3.62px; position: absolute; background: white"></div>
+    </div>
+    <div style="width: 178.86px; height: 19px; padding-top: 1px; padding-bottom: 1px; padding-right: 45.58px; left: 167.64px; top: 172.70px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
+      <div style="width: 133.28px; height: 17px; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 17px; word-wrap: break-word">Premium Offerings</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 90px; top: 209.63px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 93.73px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Marvels</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.89px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 45 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.69px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 32.08px; height: 16px; left: 90.34px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG13</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.90px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 10, 2023</div>
+    </div>
+    <div style="width: 236px; height: 521.78px; left: 346px; top: 209.63px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 211.40px; height: 21px; left: 0px; top: 370.37px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">TAYLOR SWIFT | THE ERAS</div>
+      <div style="width: 46.81px; height: 21px; left: 0px; top: 390.37px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">TOUR</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 466.37px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 79.65px; height: 17.14px; left: 0px; top: 416.37px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 48 min</div>
+      <div style="width: 3.86px; height: 16px; left: 84.45px; top: 416.37px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 32.08px; height: 16px; left: 93.11px; top: 416.37px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG13</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 433.51px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.11px; height: 16px; left: 58.36px; top: 433.51px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 13, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 602px; top: 209.63px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 175.29px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Five Nights at Freddy's</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 77.51px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 50 min</div>
+      <div style="width: 3.86px; height: 16px; left: 82.31px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 32.08px; height: 16px; left: 90.97px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG13</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.98px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 27, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 858px; top: 209.63px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 199.04px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Killers of the Flower Moon</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 79.06px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">3 hr 26 min</div>
+      <div style="width: 3.86px; height: 16px; left: 83.86px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 92.52px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 106.16px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 82.51px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 20, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 1114px; top: 209.63px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 111.56px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Holdovers</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.39px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 13 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.19px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 89.84px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 103.48px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.98px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 27, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 90px; top: 751.41px; position: absolute">
+      <div style="left: 0px; top: 0px; position: absolute; background-image: url(https://via.placeholder.com/236x354); flex-direction: column; justify-content: flex-end; align-items: center; display: inline-flex">
+        <img style="width: 284px; height: 398px" src="https://via.placeholder.com/284x398" />
+      </div>
+      <div style="width: 170.29px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Crow</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.56px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 38 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.36px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 18.64px; height: 16px; left: 90.02px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.90px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 10, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 346px; top: 751.41px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 58.04px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Priscilla</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 77.51px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 50 min</div>
+      <div style="width: 3.86px; height: 16px; left: 82.31px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 90.97px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 104.61px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.98px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 27, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 602px; top: 751.41px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 229.29px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Paw Patrol: The Mighty Movie</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.65px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 28 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.45px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 18.64px; height: 16px; left: 90.11px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.65px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Sep 29, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 858px; top: 751.41px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 163.97px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Exorcist: Believer</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 73.89px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 51 min</div>
+      <div style="width: 3.86px; height: 16px; left: 78.69px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 87.34px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 100.98px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 73.90px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 6, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 1114px; top: 751.41px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 56.29px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Radical</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 70.78px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 5 min</div>
+      <div style="width: 3.86px; height: 16px; left: 75.58px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 32.08px; height: 16px; left: 84.23px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG13</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 75.39px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 3, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 90px; top: 1273.19px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 132.42px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Anatomy of a Fall</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 78.83px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 32 min</div>
+      <div style="width: 3.86px; height: 16px; left: 83.63px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 92.28px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 105.92px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.11px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 13, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 346px; top: 1273.19px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 164.01px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">It's a Wonderful Knife</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 75.89px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 27 min</div>
+      <div style="width: 3.86px; height: 16px; left: 80.69px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 89.34px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 102.98px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.90px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 10, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 602px; top: 1273.19px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 158.75px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">What Happens Later</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.95px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 43 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.75px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 90.41px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 104.05px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 75.39px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 3, 2023</div>
+    </div>
+    <div style="width: 236px; height: 484.64px; left: 858px; top: 1273.19px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 89.28px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">After Death</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 438.14px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 29.98px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr</div>
+      <div style="width: 3.86px; height: 16px; left: 34.78px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 32.08px; height: 16px; left: 43.44px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG13</div>
+      <div style="width: 55.39px; height: 16px; left: 75.31px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.98px; height: 16px; left: 133.67px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 27, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 1114px; top: 1273.19px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 206.78px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Marsh King's Daughter</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 77.22px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 48 min</div>
+      <div style="width: 3.86px; height: 16px; left: 82.02px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 90.67px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 104.31px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 75.39px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 3, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 90px; top: 1794.97px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 91.61px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Creator</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.39px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 13 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.19px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 32.08px; height: 16px; left: 89.84px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">PG13</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.65px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Sep 29, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 346px; top: 1794.97px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 75.09px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Freelance</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 77.22px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 48 min</div>
+      <div style="width: 3.86px; height: 16px; left: 82.02px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 90.67px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 104.31px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 79.98px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 27, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 602px; top: 1794.97px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 47.42px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Saw X</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.50px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 58 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.30px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 8.84px; height: 16px; left: 89.95px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">R</div>
+      <div style="width: 18px; height: 18px; left: 103.59px; top: 404px; position: absolute">
+        <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white"></div>
+        <div style="width: 5.40px; height: 8.73px; left: 6.30px; top: 4.59px; position: absolute; background: white"></div>
+      </div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.65px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Sep 29, 2023</div>
+    </div>
+    <div style="width: 236px; height: 521.78px; left: 858px; top: 1794.97px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 224.25px; height: 21px; left: 0px; top: 376px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Dolly Parton ROCKSTAR: The</div>
+      <div style="width: 184.95px; height: 21px; left: 0px; top: 396px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Global First Listen Event</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 475.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 67.90px; height: 17.14px; left: 0px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 7 min</div>
+      <div style="width: 3.86px; height: 16px; left: 72.70px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 19.08px; height: 16px; left: 81.36px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">NR</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 446.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 80.87px; height: 16px; left: 58.36px; top: 446.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 15, 2023</div>
+    </div>
+    <div style="width: 236px; height: 501.78px; left: 1114px; top: 1794.97px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 53.11px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Tiger 3</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 455.28px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 80.01px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 30 min</div>
+      <div style="width: 3.86px; height: 16px; left: 84.81px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 19.08px; height: 16px; left: 93.47px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">NR</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 78.59px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 11, 2023</div>
+    </div>
+    <div style="width: 236px; height: 443.28px; left: 90px; top: 2336.75px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 152.39px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">The Domino Revival</div>
+      <div style="width: 70.78px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">2 hr 5 min</div>
+      <div style="width: 3.86px; height: 16px; left: 75.58px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 19.08px; height: 16px; left: 84.23px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">NR</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 82.20px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Oct 24, 2023</div>
+    </div>
+    <div style="width: 236px; height: 443.28px; left: 346px; top: 2336.75px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 191.06px; height: 20px; left: 0px; top: 377px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">AXCN: Ghost in the Shell</div>
+      <div style="width: 77.04px; height: 17.14px; left: 0px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 24 min</div>
+      <div style="width: 3.86px; height: 16px; left: 81.84px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 19.08px; height: 16px; left: 90.50px; top: 409px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">NR</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 75.65px; height: 16px; left: 58.36px; top: 426.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 8, 2023</div>
+    </div>
+    <div style="width: 236px; height: 463.28px; left: 602px; top: 2336.75px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 234.48px; height: 21px; left: 0px; top: 376px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Medicine Man: The Stan Brock</div>
+      <div style="width: 41.29px; height: 21px; left: 0px; top: 396px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Story</div>
+      <div style="width: 76.17px; height: 17.14px; left: 0px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 55 min</div>
+      <div style="width: 3.86px; height: 16px; left: 80.97px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">|</div>
+      <div style="width: 19.08px; height: 16px; left: 89.63px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: capitalize; line-height: 17.14px; word-wrap: break-word">NR</div>
+      <div style="width: 55.39px; height: 16px; left: 0px; top: 446.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 81.59px; height: 16px; left: 58.36px; top: 446.14px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 14, 2023</div>
+    </div>
+    <div style="width: 236px; height: 504.64px; left: 858px; top: 2336.75px; position: absolute">
+      <img style="width: 236px; height: 354px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/236x354" />
+      <div style="width: 203.09px; height: 21px; left: 0px; top: 376px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Billy Idol: State Line Live at</div>
+      <div style="width: 96.26px; height: 21px; left: 0px; top: 396px; position: absolute; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Hoover Dam</div>
+      <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 0px; top: 458.14px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+      </div>
+      <div style="width: 76.39px; height: 17.14px; left: 0px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; text-transform: uppercase; line-height: 17.14px; word-wrap: break-word">1 hr 32 min</div>
+      <div style="width: 55.39px; height: 16px; left: 76.19px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Released</div>
+      <div style="width: 80.87px; height: 16px; left: 134.55px; top: 429px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Helvetica; font-weight: 400; line-height: 17.14px; word-wrap: break-word">Nov 15, 2023</div>
+    </div>
+    <div style="width: 236px; height: 467.50px; left: 1114px; top: 2336.75px; position: absolute; flex-direction: column; justify-content: center; align-items: flex-start; gap: 23px; display: inline-flex">
+      <img style="width: 236px; height: 354px; position: relative" src="https://via.placeholder.com/236x354" />
+      <div style="width: 168.26px; height: 20px; color: white; font-size: 16px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">Private Theatre Rental</div>
+      <div style="width: 183.33px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+        <div style="width: 119.53px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Advance Tickets</div>
+      </div>
+    </div>
+    <div style="width: 1440px; height: 70px; padding-left: 90px; padding-right: 90px; left: 0px; top: 84.78px; position: absolute; background: black; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+      <div style="width: 1260px; height: 68px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div style="width: 1050.33px; height: 36px; position: relative">
+          <div style="width: 316.72px; height: 48px; left: 0px; top: -6px; position: absolute; color: white; font-size: 36px; font-family: Helvetica; font-weight: 400; line-height: 36px; word-wrap: break-word">Featured Movies</div>
+          <div style="width: 24px; height: 24px; left: 332.95px; top: 8px; position: absolute">
+            <div style="width: 24px; height: 13.12px; left: 0px; top: 5.44px; position: absolute; background: white"></div>
+          </div>
+          <div style="height: 43px; padding-top: 1px; padding-bottom: 1px; padding-right: 68.62px; left: 4px; top: 0px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
+            <div style="width: 268.33px; height: 41px; font-size: 36px; font-family: Inter; font-weight: 400; line-height: 41px; word-wrap: break-word">Featured Movies</div>
+          </div>
+        </div>
+        <div style="width: 209.67px; justify-content: center; align-items: flex-start; gap: 16px; display: inline-flex">
+          <div style="width: 93.05px; align-self: stretch; padding-bottom: 3px; border-bottom: 3px white solid; justify-content: center; align-items: center; display: inline-flex">
+            <div style="width: 93.25px; height: 19px; color: white; font-size: 14.40px; font-family: Helvetica; font-weight: 400; line-height: 20.57px; word-wrap: break-word">Now Playing</div>
+          </div>
+          <div style="width: 100.83px; height: 19px; color: rgba(255, 255, 255, 0.50); font-size: 14.40px; font-family: Helvetica; font-weight: 400; line-height: 20.57px; word-wrap: break-word">Coming Soon</div>
+        </div>
+      </div>
+      <div style="width: 1260px; height: 2px; border-bottom: 2px rgba(255, 255, 255, 0.40) solid"></div>
+    </div>
+    <div style="width: 735px; height: 640px; padding-top: 57.70px; padding-bottom: 57.71px; left: 90px; top: 2873.39px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+      <div style="flex: 1 1 0; align-self: stretch; padding-left: 95px; padding-right: 110px; justify-content: flex-start; align-items: center; display: inline-flex">
+        <img style="width: 530px; height: 943px" src="https://via.placeholder.com/530x943" />
+      </div>
+    </div>
+    <div style="width: 118.64px; height: 19px; left: 865px; top: 2971.67px; position: absolute; color: white; font-size: 14px; font-family: Helvetica; font-weight: 400; line-height: 20px; word-wrap: break-word">AITUPARK </div>
+    <div style="width: 347px; height: 109px; left: 865px; top: 3159px; position: absolute; justify-content: flex-end; align-items: center; display: inline-flex">
+      <div style="width: 585px; color: white; font-size: 18px; font-family: Helvetica; font-weight: 400; line-height: 34.20px; word-wrap: break-word">As a child, Adil Zhaparov was abandoned by his parents and was therefore raised by his aunt and uncle. Years passed, Adil was an ordinary exemplary schoolboy, was attacked by bullies and was in love with his classmate Gwen Stacy, who secretly reciprocated his feelings. But after being bitten by a genetically altered spider, Adil gains incredible superpowers and his life changes forever.</div>
+    </div>
+    <div style="width: 158.28px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 865px; top: 3374px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 94.48px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Watch Video</div>
+    </div>
+    <div style="width: 169.50px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 1063.28px; top: 3374px; position: absolute; border-radius: 38px; border: 2px white solid; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 105.70px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Discover More</div>
+    </div>
+    <div style="width: 347.09px; height: 75px; padding-right: 95.84px; left: 863.50px; top: 3006.66px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
+      <div style="width: 251.25px; height: 77.50px; color: white; font-size: 30px; font-family: Helvetica; font-weight: 400; line-height: 37.50px; word-wrap: break-word">The Amazing Spider-Man (2012)</div>
+    </div>
+  </div>
+  <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 814px; top: 3018px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+    <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+  </div>
+  <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 558px; top: 3018px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+    <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+  </div>
+  <div style="width: 146.38px; height: 46.50px; padding-top: 13px; padding-bottom: 13.50px; padding-left: 32px; padding-right: 31.80px; left: 302px; top: 3018px; position: absolute; background: #0066FF; border-radius: 38px; justify-content: center; align-items: center; display: inline-flex">
+    <div style="width: 82.58px; height: 20px; text-align: center; color: white; font-size: 15px; font-family: Helvetica; font-weight: 400; line-height: 22.50px; word-wrap: break-word">Get Tickets</div>
+  </div>
+  <div style="height: 401px; padding-bottom: 71px; left: 212px; top: 3713px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: center; gap: 53px; display: inline-flex">
+    <div style="align-self: stretch; height: 117px; padding-top: 41px; padding-bottom: 40px; padding-left: 500px; padding-right: 500px; background: black; border-top: 1px #585858 solid; justify-content: center; align-items: center; display: inline-flex">
+      <div style="flex: 1 1 0; align-self: stretch; padding-left: 26px; padding-right: 26px; justify-content: center; align-items: flex-start; gap: 52px; display: inline-flex">
+        <div style="width: 36px; height: 36px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="width: 36px; height: 36px; background: white"></div>
+          <div style="width: 8.37px; height: 17.29px; background: white"></div>
+        </div>
+        <div style="width: 36px; height: 36px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="width: 36px; height: 36px; background: white"></div>
+          <div style="width: 16.15px; height: 16.15px; background: white"></div>
+          <div style="width: 1.95px; height: 1.95px; background: white"></div>
+          <div style="width: 8.33px; height: 8.28px; background: white"></div>
+        </div>
+        <div style="width: 36px; height: 36px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="width: 36px; height: 36px; background: white"></div>
+          <div style="width: 18px; height: 14.55px; background: white"></div>
+        </div>
+        <div style="width: 36px; height: 36px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="width: 36.05px; height: 35.93px; background: white"></div>
+          <div style="width: 17.23px; height: 20.09px; background: white"></div>
+        </div>
+        <div style="width: 36px; height: 36px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+          <div style="width: 36px; height: 36px; background: white"></div>
+          <div style="width: 17.37px; height: 12.20px; background: white"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="width: 1808px; height: 57px; left: 56px; top: 20px; position: absolute; backdrop-filter: blur(200px)">
+    <div style="width: 167px; height: 49px; left: 0px; top: 8px; position: absolute"></div>
+    <div style="left: 0px; top: 8px; position: absolute"><span style="color: #0066FF; font-size: 34.03px; font-family: Netflix Sans ; font-weight: 700; line-height: 48.62px; word-wrap: break-word">AITU</span><span style="color: white; font-size: 34.03px; font-family: Netflix Sans ; font-weight: 700; line-height: 48.62px; word-wrap: break-word">PARK</span></div>
+    <div style="width: 1602px; height: 36px; left: 206px; top: 14px; position: absolute">
+      <div style="width: 84px; height: 34px; left: 1518px; top: 0px; position: absolute">
+        <div style="width: 84px; height: 34px; left: 0px; top: 0px; position: absolute; background: #0066FF; border-radius: 3px"></div>
+        <div style="left: 17px; top: 7px; position: absolute; color: white; font-size: 16px; font-family: Netflix Sans; font-weight: 400; word-wrap: break-word">Sign In</div>
+      </div>
+      <div style="width: 94px; height: 36px; left: 1392px; top: 0px; position: absolute">
+        <div style="width: 94px; height: 36px; left: 0px; top: 0px; position: absolute; background: rgba(0, 0, 0, 0.40); border-radius: 2px; border: 1px #AAAAAA solid"></div>
+        <div style="width: 57.07px; left: 23px; top: 9px; position: absolute; color: white; font-size: 14px; font-family: Netflix Sans; font-weight: 400; word-wrap: break-word">English</div>
+        <div style="width: 14px; height: 14px; left: 72px; top: 11px; position: absolute">
+          <div style="width: 10.15px; height: 6.55px; left: 1.93px; top: 3.50px; position: absolute; background: white"></div>
+        </div>
+        <div style="width: 14px; height: 14px; left: 7px; top: 11px; position: absolute">
+          <div style="width: 11.67px; height: 11.67px; left: 1.17px; top: 1.17px; position: absolute">
+            <div style="width: 11.67px; height: 11.67px; left: 0px; top: 0px; position: absolute; border: 1.17px white solid"></div>
+            <div style="width: 11.67px; height: 0px; left: 0px; top: 5.83px; position: absolute; border: 1.17px white solid"></div>
+            <div style="width: 4.67px; height: 11.67px; left: 3.50px; top: -0px; position: absolute; border: 1.17px white solid"></div>
+            <div style="width: 8.25px; height: 1.71px; left: 1.71px; top: 1.79px; position: absolute; border: 1.17px white solid"></div>
+            <div style="width: 8.25px; height: 1.71px; left: 1.71px; top: 8.17px; position: absolute; border: 1.17px white solid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

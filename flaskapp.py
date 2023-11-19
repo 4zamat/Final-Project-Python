@@ -11,4 +11,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = r"postgresql://postgres:123@localhost:54
 with app.app_context():
     db.init_app(app)
 
-app.config['SECRET_KEY']="my secret key here"
+app.config['SECRET_KEY']="nN33WqfhR6vRreD9HW6j2fWj5oxsUS5H7e"

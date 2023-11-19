@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/PycharmProjects/AZAass3/.idea/AZAass3.iml" filepath="$USER_HOME$/PycharmProjects/AZAass3/.idea/AZAass3.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Final-Project-Python.iml" filepath="$PROJECT_DIR$/.idea/Final-Project-Python.iml" />
       <module fileurl="file://$USER_HOME$/PycharmProjects/Lecture 6/.idea/Lecture 6.iml" filepath="$USER_HOME$/PycharmProjects/Lecture 6/.idea/Lecture 6.iml" />
       <module fileurl="file://$USER_HOME$/PycharmProjects/pythonFinalProject/.idea/pythonFinalProject.iml" filepath="$USER_HOME$/PycharmProjects/pythonFinalProject/.idea/pythonFinalProject.iml" />

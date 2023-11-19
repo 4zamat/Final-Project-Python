@@ -1,70 +1,49 @@
-.centered-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 30vh; /* Set the container's height to 100% of the viewport height for vertical centering */
-}
-.main-header {
-  padding: 3px;
-  background-color: #333; /* Change this to your desired background color */
-  color: white;
+*{margin: 0;}
+
+body{
+    background: url("static/img/atrium.png") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: left;
+    background: black;
+    color: white;
 }
 
-.header-container {
-  max-width: 1200px; /* Adjust the max-width according to your design */
-  margin: 0 auto;
-  position: relative;
+.header{
+    width: 100%;
+    background-color: rgba(0,0,0,.2);
 }
 
-.logo-container {
-  position: absolute;
-  left: 0;
-  top: 8px;
-  color: #0066FF;
-  font-size: 34.03px;
-  font-family: 'Netflix Sans';
-  font-weight: 700;
+.header ul{
+      text-align: center;
 }
 
-.nav-menu {
-  position: absolute;
-  left: 206px;
-  top: 14px;
-  display: flex;
+.header ul li {
+    list-style: none;
+    display: inline-block;
 }
 
-.nav-link {
-  margin-right: 20px;
-  color: #DADADA;
-  font-size: 20px;
-  font-family: 'Netflix Sans';
-  font-weight: 400;
-  text-decoration: none;
+.header ul li a{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 20px;
+}
+.seat-container {
+    display: flex;
+    flex-direction: column;
 }
 
-.user-actions {
-  position: absolute;
-  right: 0;
-  top: 8px;
-  display: flex;
+.seat-row {
+    display: flex;
+    margin-bottom: 10px;
 }
 
-.button {
-  display: inline-block;
-  padding: 8px 16px;
-  background: #0066FF;
-  color: white;
-  text-decoration: none;
-  border-radius: 3px;
+label {
+    margin-right: 10px;
 }
-
-.language-selector {
-  margin-right: 20px;
-}
-
-.language-button {
-  position: relative;
-}
-
-/* Add additional styles as needed */
