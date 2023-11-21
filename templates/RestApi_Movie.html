@@ -58,6 +58,7 @@
                         <th>Description</th>
                         <th>Release Date</th>
                         <th>Poster</th>
+                        <th>Video</th>
 
                     </tr>
 
@@ -71,6 +72,7 @@
                         <td>{{row.description}}</td>
                         <td>{{row.release_date}}</td>
                         <td>{{row.poster}}</td>
+                        <td>{{row.video}}</td>
 
 
                         <td>
@@ -158,7 +160,6 @@
                   <input placeholder="YYYY-MM-DD" type="text" class="form-control" name="release_date" value="{{row.release_date}}">
 
                 </div>
-
                 <div class="form-group">
 
 
@@ -167,6 +168,17 @@
                   <input type="text" class="form-control" name="poster" value="{{row.poster}}">
 
                 </div>
+                <div class="form-group">
+
+
+                  <label>Video:</label>
+
+                  <input type="text" class="form-control" name="video" value="{{row.video}}">
+
+                </div>
+
+               <div class="form-group">
+
                <div class="form-group">
                   <button class="btn btn-primary" type="submit">Update</button>
                </div>
@@ -255,6 +267,15 @@
 
                   <label>Poster:</label>
                   <input type="text" class="form-control" name="poster" required="1">
+
+
+               </div>
+
+                <div class="form-group">
+
+
+                  <label>Video:</label>
+                  <input type="text" class="form-control" name="video" required="1">
 
 
                </div>
