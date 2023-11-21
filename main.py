@@ -32,16 +32,17 @@ def food():
     return render_template("food.html")
 
 @app.route("/movies")
-def movies(movie_id):
+def movies():
+    # movies = Movie.query.all()
+    return render_template("movies.html")
 
-    movies = Movie.query.all()
-
-    return render_template("movies.html", movies=movies)
-
+# @app.route("/movies/<int:movie_id>")
+# def movie():
+#     return render_template("movie.html")
 
 @app.route("/user/<int:user_id>")
 @login_required
-def user_page(user_id, booking_id):
+def user_page(user_id):
     if not current_user.is_authenticated:
         return redirect(url_for("login"))
 

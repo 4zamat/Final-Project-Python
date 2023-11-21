@@ -34,45 +34,60 @@ AITUPARK User Page
         </div>
 
       <p>
-       <h4> <b>Some User Data here</b></h4>
+       <h4> <b>User Data</b></h4>
         <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
-        {% if context%}
-        <table>
-          <tr>
-              <td>Username:</td> <td>{{context.login}}</td>
-          </tr>
-
-          <tr>
-              <td>First Name:</td> <td>{{context.user_fname}}</td>
-          </tr>
-
-          <tr>
-              <td>Second Name:</td> <td> {{context.user_sname}}</td>
-          </tr>
-
-          <tr>
-              <td>Cars owned:</td>
-              <td> <ol>
-                {% if context.user_cars%}
-                  {% for car in context.user_cars%}
-
-                    <li>Car Vendor: {{car.car_vendor}} | Car Model: {{car.car_model}} | Car Owner ID: {{car.car_owner}}</li>
-
-                  {% endfor %}
-                {% else %}
-                <i>This user is bishara </i> (╯︵╰,)
-                {% endif %}
-              </ol>
-              </td>
-          </tr>
-      </table>
-
-          {% endif %}
       </p>
     </div>
   </section>
 
-</main><!-- End #main -->
+</main>
+<!-- End #main -->
+<div class="container text-light" style="background-color: black">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top d-flex justify-content-center">
 
+
+    <div class="col mb-3">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">FAQ</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Investor Relations</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Ways to Watch</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Corporate Information</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Only on AITUPARK</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Help Center</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Jobs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Terms of Use</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Account</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Redeem Gift Cards</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Privacy</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Speed Test</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Media Center</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Buy Gift Cards</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Cookie Preferences</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Legal Notices</a></li>
+      </ul>
+    </div>
+
+
+  </footer>
+</div>
 <!-- CLOSING THE BLOCK (MUST BE DONE!!!) -->
 {% endblock %}

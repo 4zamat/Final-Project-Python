@@ -6,29 +6,313 @@ Movies
 
 
 {% block body%}
+<head>
+    <style>
 
-<h3 style="margin-top: 160px; margin-left: 170px; font-size: 25px">Movies at <span style="color: #06F; font-weight: bold;">AITUPARK</span></h3>
-<div class="album py-5 bg-body-tertiary">
 
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {% for movie in movies %}
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <div class="card-body">
-                      <li><b>Title:</b> {{ movie.title }} </li>
-                      <li><b>Time:</b> {{ movie.release_data }} </li>
-                      <p class="card-text">{{ movie.description }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <a href="{{ url_for('booking', post_id=post.id) }}" class="btn btn-sm btn-outline-secondary">Book</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
+        /*listmodel*/
+        .lst {
+          border-top: 1px solid black;
+            border-bottom: 1px solid #d1d1e0;
+          padding: 15px;
+        }
+        #data-panel {
+          background-color: black;
+          color: white;
+        }
+
+        .card {
+          background-color: black;
+          color: white;
+        }
+
+        .card-title {
+          color: white;
+        }
+    </style>
+</head>
+<h3 style="margin-top: 160px; margin-left: 70px; font-size: 40px">Movies at <span style="color: #06F; font-weight: bold;">AITUPARK</span></h3>
+  <div class="container mt-5 ">
+    <!--search bar-->
+<!--    <div class="row" id="search-bar">-->
+<!--      <form class="form-inline">-->
+<!--        <label class="sr-only" for="inlineFormInputName2">Name</label>-->
+<!--        <input type="text" class="form-control mb-2 mr-sm-2" id="search" placeholder="search name ...">-->
+<!--        <button type="submit" class="btn btn-primary mb-2" id="submit-search">Search</button>-->
+<!--      </form>-->
+<!--    </div>-->
+
+    <div class="clearfix"></div>
+
+    <!-- data-panel -->
+    <div class="row" id="data-panel">
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="/static/img/marvels.png" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">The Marvels</h6>
             </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="1">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="1">+</button>
+            </div>
+          </div>
         </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="/static/img/taylor.png" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">TAYLOR SWIFT | THE ERAS TOUR</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="2">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="2">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="/static/img/freddy.png" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Five Nights at Freddy's</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#show-movie-modal" data-id="2">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="2">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="/static/img/dicaprio.png" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Avengers: Infinity War</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="4">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="4">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/80PWnSTkygi3QWWmJ3hrAwqvLnO.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Mission: Impossible - Fallout</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="5">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="5">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/x1txcDXkcM65gl7w20PwYSxAYah.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Incredibles 2</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="6">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="6">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/jjPJ4s3DWZZvI4vw8Xfi4Vqa1Q8.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Fifty Shades Freed</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="7">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="7">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/2slvblTroiT1lY9bYLK7Amigo1k.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">The First Purge</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="8">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="8">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Ready Player One</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="9">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="9">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/3gIO6mCd4Q4PF1tuwcyI3sjFrtI.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Rampage</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="10">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="10">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/l1DRl40x2OWUoPP42v8fjKdS1Z3.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">The Purge: Anarchy</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="11">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="11">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card mb-2">
+            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/vmj2PzTLC6xJvshpq8SlaYE3gbd.jpg" alt="Card image cap">
+            <div class="card-body movie-item-body">
+              <h6 class="card-title">Mission: Impossible</h6>
+            </div>
+            <!-- "More" button -->
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="12">More</button>
+                <!-- favorite button -->
+              <button class="btn btn-info btn-add-favorite" data-id="12">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="show-movie-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="show-movie-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="show-movie-body">
+          <div class="row">
+            <div class="col-sm-8" id="show-movie-image">
+            </div>
+            <div class="col-sm-4">
+              <p><em id="show-movie-date"></em></p>
+              <p id="show-movie-description"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Pagination -->
+<div class="container text-light" style="background-color: black">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top d-flex justify-content-center">
+
+
+    <div class="col mb-3">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">FAQ</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Investor Relations</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Ways to Watch</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Corporate Information</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Only on AITUPARK</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Help Center</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Jobs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Terms of Use</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Account</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Redeem Gift Cards</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Privacy</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Speed Test</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Media Center</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Buy Gift Cards</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Cookie Preferences</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Legal Notices</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 {% endblock %}
