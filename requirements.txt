@@ -98,6 +98,6 @@ wcwidth==0.2.9
 webcolors==1.13
 webencodings==0.5.1
 websocket-client==1.6.4
-Werkzeug==2.3.7
+Werkzeug==3.0.0
 widgetsnbextension==4.0.9
 WTForms==3.1.1
