@@ -36,10 +36,17 @@ class Movie(db.Model):
     genre = db.Column(db.String(255), nullable=False)
     duration = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    release_date = db.Column(db.Date, nullable=False)
+    release_date = db.Column(db.String(255), nullable=False)
 
     bookings = db.relationship("Booking", back_populates="movie", cascade="all, delete-orphan")
 
+    def __init__(self, title, genre, duration, description, release_date):
+        # self.movie_id = movie_id
+        self.title = title
+        self.genre = genre
+        self.duration = duration
+        self.description = description
+        self.release_date = release_date
     def __repr__(self) -> str:
         return f"Movie(movie_id={self.movie_id!r}, title={self.title!r}, release_date={self.release_date!r})"
 

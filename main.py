@@ -1,5 +1,5 @@
 from flask import render_template, request, session, redirect, url_for, flash
-from database.models import User, Movie, db
+from database.models import User, Movie, Booking, db
 from database import crud
 from flaskapp import *
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
@@ -85,53 +85,44 @@ def register():
     return render_template("register.html")
 
 
+# @app.route("/login", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         user = User.query.filter_by(login=request.form['username'], password=request.form['password']).first()
+#         if user:
+#             login_user(user)
+#             return redirect(url_for("user_page", user_id=user.user_id))
+#         else:
+#             return render_template("login.html", context="The login or username were wrong")
+#
+#     return render_template("login.html")
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        user = User.query.filter_by(login=request.form['username'], password=request.form['password']).first()
+        username = request.form['username']
+        password = request.form['password']
+        user = User.query.filter_by(login=username, password=password).first()
         if user:
             login_user(user)
-            return redirect(url_for("user_page", user_id=user.user_id))
+            if username == 'admin' and password == 'admin':
+                return redirect(url_for("admin_page"))
+            else:
+                return redirect(url_for("user_page", user_id=user.user_id))
         else:
             return render_template("login.html", context="The login or username were wrong")
 
     return render_template("login.html")
-# @app.route("/login", methods=["GET", "POST"])
-# def login():
-#     if request.method == "POST":
-#         username = request.form['login']
-#         password = request.form['password']
-#
-#         # Check if the user is an admin
-#         admin = User.query.filter_by(username=username, password=password, is_admin=True).first()
-#
-#         if admin:
-#             login_user(admin)
-#             flash('Admin login successful!', 'success')
-#             return redirect(url_for("admin_dashboard"))
-#         else:
-#             # Check if the user is a regular user
-#             user = User.query.filter_by(username=username, password=password).first()
-#
-#             if user:
-#                 login_user(user)
-#                 flash('User login successful!', 'success')
-#                 return redirect(url_for("user_page", user_id=user.user_id))
-#             else:
-#                 flash('Invalid login credentials', 'danger')
-#
-#     return render_template("login.html", context=None)
 
 
-@app.route('/admin/dashboard')
-@login_required
-def admin_dashboard():
-    if current_user.is_admin:
-        return render_template('admin_dashboard.html')
-    else:
-        # Redirect to a forbidden page or login page
-        flash('You do not have the necessary privileges.', 'danger')
-        return "You are not authorized to view this profile", 403
+# @app.route('/admin/dashboard')
+# @login_required
+# def admin_dashboard():
+#     if current_user.is_admin:
+#         return render_template('RestApi.html')
+#     else:
+#         # Redirect to a forbidden page or login page
+#         flash('You do not have the necessary privileges.', 'danger')
+#         return "You are not authorized to view this profile", 403
 
 
 @app.route("/logout")
@@ -141,12 +132,28 @@ def logout():
 
 
 #admin
+# @app.route('/admin')
+# def Index():
+#     all_data = User.query.all()
+#
+#     return render_template("RestApi.html", users = all_data)
 @app.route('/admin')
-def Index():
-    all_data = User.query.all()
+@login_required  # Requires the user to be logged in to access this route
+def admin_page():
+    if current_user.login == 'admin':  # Use the appropriate attribute for the username
+        all_data = User.query.all()
+        return render_template("RestApi.html", users=all_data)
+    else:
+        return "Access forbidden. You must be an admin to access this page.", 403
 
-    return render_template("RestApi.html", users = all_data)
-
+@app.route('/admin/movie')
+@login_required  # Requires the user to be logged in to access this route
+def admin_movie_page():
+    if current_user.login == 'admin':  # Use the appropriate attribute for the username
+        all_movie_data = Movie.query.all()
+        return render_template("RestApi_Movie.html", users=all_movie_data)
+    else:
+        return "Access forbidden. You must be an admin to access this page.", 403
 
 #insert
 @app.route('/insert', methods = ['POST'])
@@ -166,9 +173,29 @@ def insert():
 
         flash("User Inserted Successfully")
 
-        return redirect(url_for('Index'))
+        return redirect(url_for('admin_page'))
 
+@app.route('/insert/movie', methods = ['POST'])
+def insert_movie():
+    if request.method == 'POST':
 
+        # login = request.form['login']
+        # user_fname = request.form['user_fname']
+        # user_sname = request.form['user_sname']
+        # password = request.form['password']
+        title = request.form['title']
+        genre = request.form['genre']
+        duration = request.form['duration']
+        description = request.form['description']
+        release_date = request.form['release_date']
+
+        my_movie_data = Movie(title,genre,duration,description,release_date)
+        db.session.add(my_movie_data)
+        db.session.commit()
+
+        flash("Movie Inserted Successfully")
+
+        return redirect(url_for('admin_movie_page'))
 
 #update_portfolio
 @app.route('/update', methods = ['POST'])
@@ -183,10 +210,27 @@ def update():
         my_data.password = request.form['password']
 
         db.session.commit()
-        flash("Employee Updated Successfully")
+        flash("User Updated Successfully")
 
-        return redirect(url_for('Index'))
+        return redirect(url_for('admin_page'))
 
+
+@app.route('/update/movie', methods = ['POST'])
+def update_movie():
+
+    if request.method == 'POST':
+        my_movie_data = Movie.query.get(request.form.get('movie_id'))
+
+        my_movie_data.title = request.form['title']
+        my_movie_data.genre = request.form['genre']
+        my_movie_data.duration = request.form['duration']
+        my_movie_data.description = request.form['description']
+        my_movie_data.release_date = request.form['release_date']
+
+        db.session.commit()
+        flash("Movie Updated Successfully")
+
+        return redirect(url_for('admin_movie_page'))
 
 #delete
 @app.route('/delete/<id>/', methods = ['GET', 'DELETE'])
@@ -194,9 +238,18 @@ def delete(id):
     my_data = User.query.get(id)
     db.session.delete(my_data)
     db.session.commit()
-    flash("Employee Deleted Successfully")
+    flash("User Deleted Successfully")
 
-    return redirect(url_for('Index'))
+    return redirect(url_for('admin_page'))
+
+@app.route('/delete/movie/<id>/', methods = ['GET', 'DELETE'])
+def delete_movie(id):
+    my_movie_data = Movie.query.get(id)
+    db.session.delete(my_movie_data)
+    db.session.commit()
+    flash("Movie Deleted Successfully")
+
+    return redirect(url_for('admin_movie_page'))
 
 
 if __name__ == "__main__":
