@@ -198,8 +198,9 @@ def insert_movie():
         description = request.form['description']
         release_date = request.form['release_date']
         poster = request.form['poster']
+        video = request.form['video']
 
-        my_movie_data = Movie(title,genre,duration,description,release_date, poster)
+        my_movie_data = Movie(title,genre,duration,description,release_date, poster, video)
         db.session.add(my_movie_data)
         db.session.commit()
 
@@ -238,6 +239,7 @@ def update_movie():
         my_movie_data.description = request.form['description']
         my_movie_data.release_date = request.form['release_date']
         my_movie_data.poster = request.form['poster']
+        my_movie_data.video = request.form['video']
 
         db.session.commit()
         flash("Movie Updated Successfully")

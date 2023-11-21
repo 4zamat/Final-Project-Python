@@ -38,10 +38,11 @@ class Movie(db.Model):
     description = db.Column(db.Text, nullable=False)
     release_date = db.Column(db.Date, nullable=False)
     poster = db.Column(db.String(255), nullable=False)
+    video = db.Column(db.String(255), nullable=False)
 
     bookings = db.relationship("Booking", back_populates="movie", cascade="all, delete-orphan")
 
-    def __init__(self, title, genre, duration, description, release_date, poster):
+    def __init__(self, title, genre, duration, description, release_date, poster, video):
         # self.movie_id = movie_id
         self.title = title
         self.genre = genre
@@ -49,8 +50,9 @@ class Movie(db.Model):
         self.description = description
         self.release_date = release_date
         self.poster = poster
+        self.video = video
     def __repr__(self) -> str:
-        return f"Movie(movie_id={self.movie_id!r}, title={self.title!r}, release_date={self.release_date!r})"
+        return f"Movie(movie_id={self.movie_id!r}, title={self.title!r}, release_date={self.release_date!r}, poster={self.poster!r}, video={self.video!r})"
 
 
 class Booking(db.Model):
