@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <h2>{{ movie.title }}</h2>
+    <p>Genre: {{ movie.genre }}</p>
+    <p>Duration: {{ movie.duration }}</p>
+    <p>Description: {{ movie.description }}</p>
+    <p>Release Date: {{ movie.release_date }}</p>
+
+    <!-- Add a form to book a ticket -->
+    <form action="{{ url_for('book_ticket', movie_id=movie.movie_id) }}" method="post">
+        <!-- Add form fields if needed (e.g., number of tickets, date, etc.) -->
+        <button type="submit" class="btn btn-primary">Book Ticket</button>
+    </form>
+</div>
+{% endblock %}

@@ -10,14 +10,20 @@ class User(db.Model, UserMixin):
     user_fname = db.Column(db.String(255))
     user_sname = db.Column(db.String(255))
     password = db.Column(db.String(255), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
 
     bookings = db.relationship("Booking", back_populates="user", cascade="all, delete-orphan")
+
+    def __init__(self, login, user_fname, user_sname, password):
+        self.login = login
+        self.user_fname = user_fname
+        self.user_sname = user_sname
+        self.password = password
 
     def __repr__(self) -> str:
         return f"User(user_id={self.user_id!r}, name={self.user_fname!r}, surname={self.user_sname!r})"
 
-    # def get_id(self):
-    #     return str(self.user_id)
+
     @property
     def id(self):
         return self.user_id
@@ -50,3 +56,9 @@ class Booking(db.Model):
 
     def __repr__(self) -> str:
         return f"Booking(booking_id={self.booking_id!r}, user_id={self.user_id!r}, movie_id={self.movie_id!r}, booking_date={self.booking_date!r})"
+
+
+class Admin(db.Model):
+    admin_id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(255), unique=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
