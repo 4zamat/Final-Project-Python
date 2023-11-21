@@ -57,6 +57,7 @@
                         <th>Duration</th>
                         <th>Description</th>
                         <th>Release Date</th>
+                        <th>Poster</th>
 
                     </tr>
 
@@ -69,6 +70,7 @@
                         <td>{{row.duration}}</td>
                         <td>{{row.description}}</td>
                         <td>{{row.release_date}}</td>
+                        <td>{{row.poster}}</td>
 
 
                         <td>
@@ -153,10 +155,18 @@
 
                   <label>Release date:</label>
 
-                  <input type="text" class="form-control" name="release_date" value="{{row.release_date}}">
+                  <input placeholder="YYYY-MM-DD" type="text" class="form-control" name="release_date" value="{{row.release_date}}">
 
                 </div>
 
+                <div class="form-group">
+
+
+                  <label>Poster:</label>
+
+                  <input type="text" class="form-control" name="poster" value="{{row.poster}}">
+
+                </div>
                <div class="form-group">
                   <button class="btn btn-primary" type="submit">Update</button>
                </div>
@@ -235,7 +245,16 @@
 
 
                   <label>Release Date:</label>
-                  <input type="text" class="form-control" name="release_date" required="1">
+                  <input placeholder="YYYY-MM-DD" type="text" class="form-control" name="release_date" required="1">
+
+
+               </div>
+
+                <div class="form-group">
+
+
+                  <label>Poster:</label>
+                  <input type="text" class="form-control" name="poster" required="1">
 
 
                </div>

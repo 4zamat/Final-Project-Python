@@ -8,8 +8,6 @@ Movies
 {% block body%}
 <head>
     <style>
-
-
         /*listmodel*/
         .lst {
           border-top: 1px solid black;
@@ -46,214 +44,28 @@ Movies
 
     <!-- data-panel -->
     <div class="row" id="data-panel">
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="/static/img/marvels.png" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">The Marvels</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="1">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="1">+</button>
-            </div>
-          </div>
-        </div>
 
+        {% for film in all_movies %}
         <div class="col-sm-3">
           <div class="card mb-2">
-            <img class="card-img-top " src="/static/img/taylor.png" alt="Card image cap">
+<!--                <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+<!--            <img class="card-img-top " src="/static/img/{{ film.title }}.png" alt="Card image cap">-->
+            <img src="{{ url_for('static', filename='img/posters/' + film.poster + '.png') }}" alt="{{ film.title }}">
             <div class="card-body movie-item-body">
-              <h6 class="card-title">TAYLOR SWIFT | THE ERAS TOUR</h6>
+              <h6 class="card-title" style="margin-bottom: 15px">{{ film.title }}</h6>
+              <p style="color: darkgrey; font-size: 12px; margin-bottom: 0;">{{ film.duration }}</p>
+              <p style="color: darkgrey; font-size: 12px; margin-bottom: 0">Released {{ film.release_date }}</p>
             </div>
             <!-- "More" button -->
             <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="2">More</button>
+                <a href="/movie/{{film.movie_id}}"><button type="button"  style="margin-bottom: 15px" class="btn btn-primary btn-show-movie float-right" data-toggle="modal" data-target="#show-movie-modal" data-id="1">Get Tickets</button></a>
                 <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="2">+</button>
+<!--              <button class="btn btn-info btn-add-favorite" data-id="1">+</button>-->
             </div>
           </div>
         </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="/static/img/freddy.png" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Five Nights at Freddy's</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#show-movie-modal" data-id="2">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="2">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="/static/img/dicaprio.png" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Avengers: Infinity War</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="4">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="4">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/80PWnSTkygi3QWWmJ3hrAwqvLnO.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Mission: Impossible - Fallout</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="5">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="5">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/x1txcDXkcM65gl7w20PwYSxAYah.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Incredibles 2</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="6">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="6">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/jjPJ4s3DWZZvI4vw8Xfi4Vqa1Q8.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Fifty Shades Freed</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="7">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="7">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/2slvblTroiT1lY9bYLK7Amigo1k.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">The First Purge</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="8">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="8">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Ready Player One</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="9">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="9">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/3gIO6mCd4Q4PF1tuwcyI3sjFrtI.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Rampage</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="10">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="10">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/l1DRl40x2OWUoPP42v8fjKdS1Z3.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">The Purge: Anarchy</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="11">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="11">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="card mb-2">
-            <img class="card-img-top " src="https://movie-list.alphacamp.io/posters/vmj2PzTLC6xJvshpq8SlaYE3gbd.jpg" alt="Card image cap">
-            <div class="card-body movie-item-body">
-              <h6 class="card-title">Mission: Impossible</h6>
-            </div>
-            <!-- "More" button -->
-            <div class="card-footer">
-              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#show-movie-modal" data-id="12">More</button>
-                <!-- favorite button -->
-              <button class="btn btn-info btn-add-favorite" data-id="12">+</button>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="show-movie-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="show-movie-title">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="show-movie-body">
-          <div class="row">
-            <div class="col-sm-8" id="show-movie-image">
-            </div>
-            <div class="col-sm-4">
-              <p><em id="show-movie-date"></em></p>
-              <p id="show-movie-description"></p>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Pagination -->

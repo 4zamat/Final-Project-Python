@@ -1,17 +1,72 @@
 {% extends "base.html" %}
 
-{% block content %}
-<div class="container">
+{% block title %}
+{{ movie.title }}
+{% endblock%}
+
+
+{% block body%}
+    <div class="center-video">
+        <iframe width="1120" height="630" src="{{ movie.trailer }}"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="container" style="margin-top: 80px">
     <h2>{{ movie.title }}</h2>
     <p>Genre: {{ movie.genre }}</p>
     <p>Duration: {{ movie.duration }}</p>
     <p>Description: {{ movie.description }}</p>
     <p>Release Date: {{ movie.release_date }}</p>
 
-    <!-- Add a form to book a ticket -->
-    <form action="{{ url_for('book_ticket', movie_id=movie.movie_id) }}" method="post">
-        <!-- Add form fields if needed (e.g., number of tickets, date, etc.) -->
-        <button type="submit" class="btn btn-primary">Book Ticket</button>
-    </form>
+</div>
+<div class="container text-light" style="background-color: black">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top d-flex justify-content-center">
+
+
+    <div class="col mb-3">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">FAQ</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Investor Relations</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Ways to Watch</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Corporate Information</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Only on AITUPARK</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Help Center</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Jobs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Terms of Use</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Account</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Redeem Gift Cards</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Privacy</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Speed Test</a></li>
+      </ul>
+    </div>
+
+    <div class="col mb-3">
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Media Center</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Buy Gift Cards</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Cookie Preferences</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Legal Notices</a></li>
+      </ul>
+    </div>
+
+
+  </footer>
 </div>
 {% endblock %}

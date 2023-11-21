@@ -35,7 +35,10 @@ def food():
 @app.route("/movies")
 def movies():
     # movies = Movie.query.all()
-    return render_template("movies.html")
+    all_movies = Movie.query.order_by(Movie.release_date.desc()).all()
+    for film in all_movies:
+        film.release_date = film.release_date.strftime("%B %d, %Y")
+    return render_template("movies.html", all_movies=all_movies)
 
 
 @app.route("/user/<int:user_id>")
@@ -59,6 +62,16 @@ def user_page(user_id):
     else:
         return "You are not authorized to view this profile", 403
 
+
+@app.route("/movie/<movie_id>")
+def movie_page(movie_id):
+    movie = Movie.query.get(movie_id)
+    # booking = Booking.query.get()
+
+    if movie is None:
+        return "User not found", 404
+
+    return render_template("movie.html", movie=movie)
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -179,17 +192,14 @@ def insert():
 def insert_movie():
     if request.method == 'POST':
 
-        # login = request.form['login']
-        # user_fname = request.form['user_fname']
-        # user_sname = request.form['user_sname']
-        # password = request.form['password']
         title = request.form['title']
         genre = request.form['genre']
         duration = request.form['duration']
         description = request.form['description']
         release_date = request.form['release_date']
+        poster = request.form['poster']
 
-        my_movie_data = Movie(title,genre,duration,description,release_date)
+        my_movie_data = Movie(title,genre,duration,description,release_date, poster)
         db.session.add(my_movie_data)
         db.session.commit()
 
@@ -197,7 +207,8 @@ def insert_movie():
 
         return redirect(url_for('admin_movie_page'))
 
-#update_portfolio
+
+#update
 @app.route('/update', methods = ['POST'])
 def update():
 
@@ -226,6 +237,7 @@ def update_movie():
         my_movie_data.duration = request.form['duration']
         my_movie_data.description = request.form['description']
         my_movie_data.release_date = request.form['release_date']
+        my_movie_data.poster = request.form['poster']
 
         db.session.commit()
         flash("Movie Updated Successfully")
