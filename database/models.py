@@ -68,8 +68,3 @@ class Booking(db.Model):
     def __repr__(self) -> str:
         return f"Booking(booking_id={self.booking_id!r}, user_id={self.user_id!r}, movie_id={self.movie_id!r}, booking_date={self.booking_date!r})"
 
-
-class Admin(db.Model):
-    admin_id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
