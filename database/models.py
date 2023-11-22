@@ -65,6 +65,7 @@ class Booking(db.Model):
     user = db.relationship("User", back_populates="bookings")
     movie = db.relationship("Movie", back_populates="bookings")
 
+
     def __repr__(self) -> str:
         return f"Booking(booking_id={self.booking_id!r}, user_id={self.user_id!r}, movie_id={self.movie_id!r}, booking_date={self.booking_date!r})"
 
